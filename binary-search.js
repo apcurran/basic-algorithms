@@ -6,6 +6,7 @@ function binarySearch(arr, target) {
 
     while (startIndex <= endIndex) {
         let middleIndex = Math.floor((startIndex + endIndex) / 2);
+        var middleIndex = Math.floor((startIndex + endIndex) / 2);
 
         if (arr[middleIndex] === target) {
             console.log("Target was found at index ", middleIndex);
