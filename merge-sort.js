@@ -1,5 +1,5 @@
 function mergeSort(numsArr) {
-    if (numsArr.length < 2) return numsArr;
+    if (numsArr.length <= 1) return numsArr;
 
     const sortedArr = [...numsArr];
     const length = sortedArr.length;
