@@ -6,7 +6,6 @@ function binarySearch(arr, target) {
 
     while (startIndex <= endIndex) {
         let middleIndex = Math.floor((startIndex + endIndex) / 2);
-        var middleIndex = Math.floor((startIndex + endIndex) / 2);
 
         if (arr[middleIndex] === target) {
             console.log("Target was found at index ", middleIndex);
@@ -23,8 +22,8 @@ function binarySearch(arr, target) {
     }
 
     // If target is not found at all.
-    console.log("Target value was not found in the provided array.");
+    return "Target value was not found in the provided array.";
 }
 
-const myArr = [1, 5, 12, 53, 143]; // Sorted array
-console.log(binarySearch(myArr, 1));
+const myArr = [1, 5, 12, 53, 74, 143]; // Sorted array
+console.log(binarySearch(myArr, 5));
