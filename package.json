@@ -1,0 +1,22 @@
+{
+  "name": "basic-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "binary-search.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apcurran/basic-algorithms.git"
+  },
+  "author": "Alex Curran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apcurran/basic-algorithms/issues"
+  },
+  "homepage": "https://github.com/apcurran/basic-algorithms#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
