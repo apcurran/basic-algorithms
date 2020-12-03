@@ -1,5 +1,4 @@
 function bubbleSort(arr) {
-    
     do {
         var changed = false;
 
