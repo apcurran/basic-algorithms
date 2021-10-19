@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+ * @param {number[]} arr 
+ * @param {number} target 
+ * @returns {number}
+ */
 function binarySearch(arr, target) {
     let endIndex = arr.length - 1;
     let startIndex = 0;
@@ -24,4 +29,4 @@ function binarySearch(arr, target) {
     return -1;
 }
 
-module.exports = binarySearch;
+module.exports = { binarySearch };
