@@ -1,21 +1,19 @@
+"use strict";
+
+/**
+ * @param {number[]} arr 
+ * @returns {number[]}
+ */
 function bubbleSort(arr) {
-    do {
-        var changed = false;
-
-        for (let i = 0; i < arr.length; i++) {
-            // Is the current num greater than the next num?
-            if (arr[i] > arr[i + 1]) {
-                // Then, swap both nums.
-                let temp = arr[i];
-
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-                changed = true;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] > arr[j]) {
+                [arr[i], arr[j]] = [arr[j], arr[i]]; // ES6 destructuring to swap vals
             }
         }
-    } while (changed); // Keep swapping until changed is false.
+    }
 
     return arr;
 }
 
-console.log(bubbleSort([4, 2, 1, 6, 88, 12, 14, 7]));
+console.log( bubbleSort([6, 2, 1, 3, 12, 5, -2]) );
