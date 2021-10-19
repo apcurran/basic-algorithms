@@ -26,3 +26,5 @@ function merge(left, right) {
 
 console.log( mergeSort([3, 1, 2, 7, 3, 4]) );
 console.log( mergeSort([10, 8, 4, 15, 7]) );
+
+module.exports = { mergeSort };

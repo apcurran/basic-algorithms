@@ -14,3 +14,5 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([5, 2, 10, 3, 7, 1]));
+
+module.exports = { insertionSort };

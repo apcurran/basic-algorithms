@@ -47,3 +47,5 @@ function selectionSort(arr) {
 // }
 
 console.log(selectionSort([5, 6, 4, 1, 10, 3]));
+
+module.exports = { selectionSort };

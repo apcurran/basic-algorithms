@@ -20,3 +20,5 @@ function quickSort(numsArr) {
 }
 
 console.log(quickSort([2, 1, 4, 3, 6]));
+
+module.exports = { quickSort };
