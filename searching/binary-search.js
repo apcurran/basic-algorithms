@@ -43,16 +43,17 @@
  * @returns {number}
  */
 function binarySearch(arr, target, startIndex = 0, endIndex = arr.length - 1) {
+    // first base case
+    if (startIndex > endIndex) return -1;
+
     const midPoint = Math.floor((startIndex + endIndex) / 2);
 
     if (arr[midPoint] === target) {
         return midPoint;   
-    } else if (endIndex - startIndex === 0) {
-        return -1;
     } else if (arr[midPoint] < target) {
         return binarySearch(arr, target, midPoint + 1, endIndex);
     } else if (arr[midPoint] > target) {
-        return binarySearch(arr, target, startIndex, midPoint);
+        return binarySearch(arr, target, startIndex, midPoint - 1);
     }
 }
 
