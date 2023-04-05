@@ -15,7 +15,7 @@ function binarySearch(arr, target) {
     let low = 0;
     let high = arr.length - 1;
 
-    while (low < high) {
+    while (low <= high) {
         const mid = low + Math.floor((high - low) / 2);
         const val = arr[mid];
 
@@ -23,7 +23,7 @@ function binarySearch(arr, target) {
             return mid;
         } else if (val > target) {
             // search left half -- discard right
-            high = mid;
+            high = mid - 1;
         } else {
             // search right half -- discard left
             low = mid + 1;
