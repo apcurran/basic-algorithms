@@ -36,8 +36,53 @@
 //     return [...results, ...left, ...right];
 // }
 
+// /**
+//  * Solution 2 -- slight variation
+//  * 
+//  * @param {number[]} numsArr 
+//  * @returns {number[]}
+//  */
+// function mergeSort(numsArr) {
+//     if (numsArr.length <= 1) return numsArr;
+
+//     const middleIndex = Math.floor(numsArr.length / 2);
+//     const leftArr = numsArr.slice(0, middleIndex);
+//     const rightArr = numsArr.slice(middleIndex);
+
+//     return merge(
+//         mergeSort(leftArr),
+//         mergeSort(rightArr)
+//     );
+// }
+
+// /**
+//  * @param {number[]} leftArr - sorted arr
+//  * @param {number[]} rightArr - sorted arr
+//  * @returns {number[]}
+//  */
+// function merge(leftArr, rightArr) {
+//     let resultArr = [];
+//     let leftIndex = 0;
+//     let rightIndex = 0;
+    
+//     while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
+//         const leftElem = leftArr[leftIndex];
+//         const rightElem = rightArr[rightIndex];
+
+//         if (leftElem < rightElem) {
+//             resultArr.push(leftElem);
+//             leftIndex++;
+//         } else {
+//             resultArr.push(rightElem);
+//             rightIndex++;
+//         }
+//     }
+
+//     return [...resultArr, ...leftArr.slice(leftIndex), ...rightArr.slice(rightIndex)];
+// }
+
 /**
- * Solution 2 -- slight variation
+ * Solution 3 -- refactored
  * 
  * @param {number[]} numsArr 
  * @returns {number[]}
@@ -46,13 +91,10 @@ function mergeSort(numsArr) {
     if (numsArr.length <= 1) return numsArr;
 
     const middleIndex = Math.floor(numsArr.length / 2);
-    const leftArr = numsArr.slice(0, middleIndex);
-    const rightArr = numsArr.slice(middleIndex);
+    const leftArr = mergeSort(numsArr.slice(0, middleIndex));
+    const rightArr = mergeSort(numsArr.slice(middleIndex));
 
-    return merge(
-        mergeSort(leftArr),
-        mergeSort(rightArr)
-    );
+    return merge(leftArr, rightArr);
 }
 
 /**
@@ -61,24 +103,35 @@ function mergeSort(numsArr) {
  * @returns {number[]}
  */
 function merge(leftArr, rightArr) {
-    let resultArr = [];
     let leftIndex = 0;
     let rightIndex = 0;
+    let results = [];
     
     while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
         const leftElem = leftArr[leftIndex];
         const rightElem = rightArr[rightIndex];
 
         if (leftElem < rightElem) {
-            resultArr.push(leftElem);
+            results.push(leftElem);
             leftIndex++;
         } else {
-            resultArr.push(rightElem);
+            results.push(rightElem);
             rightIndex++;
         }
     }
 
-    return [...resultArr, ...leftArr.slice(leftIndex), ...rightArr.slice(rightIndex)];
+    // exhaust left array leftovers
+    while (leftIndex < leftArr.length) {
+        results.push(leftArr[leftIndex]);
+        leftIndex++;
+    }
+    // exhaust right array leftovers
+    while (rightIndex < rightArr.length) {
+        results.push(rightArr[rightIndex]);
+        rightIndex++;
+    }
+
+    return results;
 }
 
 module.exports = { mergeSort };
