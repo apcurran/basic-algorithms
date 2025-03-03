@@ -98,8 +98,8 @@ function mergeSort(numsArr) {
 }
 
 /**
- * @param {number[]} leftArr - sorted arr
- * @param {number[]} rightArr - sorted arr
+ * @param {number[]} leftArr
+ * @param {number[]} rightArr
  * @returns {number[]}
  */
 function merge(leftArr, rightArr) {
