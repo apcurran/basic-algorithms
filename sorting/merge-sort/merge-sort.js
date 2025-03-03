@@ -83,6 +83,8 @@
 
 /**
  * Solution 3 -- refactored
+ * time: O(n * log n) -- full array iterations for log n total stack frames on the callstack
+ * space: O(n * log n) -- array.slice() calls add to O(n) for log n total stack frames on the callstack
  * 
  * @param {number[]} numsArr 
  * @returns {number[]}
