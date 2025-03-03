@@ -111,6 +111,7 @@ function merge(leftArr, rightArr) {
         const leftElem = leftArr[leftIndex];
         const rightElem = rightArr[rightIndex];
 
+        // add smaller number to results array first -- this comparison allows for the ASC sort
         if (leftElem < rightElem) {
             results.push(leftElem);
             leftIndex++;
